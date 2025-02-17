@@ -33,6 +33,9 @@ export INTERNAL_IP
 # Switch to the container's working directory
 cd /home/container || exit 1
 
+# Ensure that the directory where the volume is mounted has the correct permissions (775)
+chmod -R 775 /home/container
+
 # Print Java version
 printf "\033[1m\033[33mcontainer@pelican~ \033[0mjava -version\n"
 java -version
